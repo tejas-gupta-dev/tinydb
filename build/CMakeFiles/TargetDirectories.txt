@@ -1,0 +1,3 @@
+C:/Users/tejas/Downloads/tinydb_full_v2/tinydb_full_v2/build/CMakeFiles/tinydb.dir
+C:/Users/tejas/Downloads/tinydb_full_v2/tinydb_full_v2/build/CMakeFiles/edit_cache.dir
+C:/Users/tejas/Downloads/tinydb_full_v2/tinydb_full_v2/build/CMakeFiles/rebuild_cache.dir
