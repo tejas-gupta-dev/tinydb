@@ -19,6 +19,9 @@ static std::string httpResp(int code, const std::string& body){
     std::ostringstream oss;
     oss << "HTTP/1.1 " << code << " OK\r\n";
     oss << "Content-Type: application/json\r\n";
+    oss << "Access-Control-Allow-Origin: *\r\n";
+    oss << "Access-Control-Allow-Headers: Content-Type\r\n";
+    oss << "Access-Control-Allow-Methods: GET, POST, OPTIONS\r\n";
     oss << "Content-Length: " << body.size() << "\r\n";
     oss << "Connection: close\r\n\r\n";
     oss << body;
@@ -39,6 +42,9 @@ std::string HttpServer::getBody(const std::string& req){
 }
 
 std::string HttpServer::handleRequest(const std::string& request){
+    if(request.rfind("OPTIONS", 0) == 0){
+        return httpResp(200, "");
+    }
     std::string path = getPath(request);
 
     if(path=="/health"){
